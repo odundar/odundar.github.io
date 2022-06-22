@@ -11,8 +11,12 @@
                     window.gtag = window.gtag || function(){dataLayer.push(arguments);}
                     console.log("Event: " + eventName);
                     eid = uuidv4();
+                    fb_eventName = eventName;
+                    if (eventName === 'purchase) {
+                        fb_eventName = 'Purchase';
+                    }
 
-                    fbq('track', eventName, {eventID: eid, 
+                    fbq('track', fb_eventName, {eid: eid, 
                                              currency: "USD",
                                              value: 246.90});
                     gtag('event', eventName, {
