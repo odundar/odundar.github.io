@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-N8MF527');
+            function fireEvent(eventName){
+                    window.dataLayer = window.dataLayer || [];
+                    window.gtag = window.gtag || function(){dataLayer.push(arguments);}
+                    console.log("Event: " + eventName);
+                    eid = uuidv4();
+                    fbq('track', eventName, {eventID: eid, currency: "USD",
+                        value: 246.90});
+                    gtag('event', eventName, {
+                        event_id: eid,
+                        transaction_id: 't_12345',
+                        currency: "USD",
+                        value: 246.90,
+                        user_data: {
+                            email_address: 'ABC@XYZ.com',
+                            phone_number: '1234567890',
+                            address: {
+                                first_name: 'john',
+                                last_name: 'smith',
+                                city: 'menlopark',
+                                region: 'ca',
+                                postal_code: '94025',
+                                country: 'usa',
+                            },
+                        },
+                        items: [
+                            {
+                                item_id: 'SKU-123',
+                                item_name: 'foo',
+                                quantity: 2,
+                                price: 123.45,
+                                currency: 'USD',
+                                item_category: 'bar',
+                                item_brand	: 'baz',
+                            },
+                            {
+                                item_id: 'SKU-124',
+                                item_name: 'foo',
+                                quantity: 1,
+                                price: 123.45,
+                                currency: 'USD',
+                                item_category: 'bar',
+                                item_brand	: 'baz',
+                            }
+                        ],
+                    });
+                }
+        </script>
+        <!-- End Google Tag Manager -->
+        <meta name="facebook-domain-verification" content="2de2mf2yjnqjqlbwlav4v4lwg7fbav" />
+        <!-- Facebook Pixel Code -->
+        <script>
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '1292647064571917');
+            fbq('track', 'PageView', {eventID: uuidv4()});
+            function uuidv4() {
+                return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                    return v.toString(16);
+                });
+            }
+            // additional events comes to this point ...
+        </script>
+        <noscript>
+            <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1292647064571917&ev=PageView&ev=AddToCart&ev=Purchase&ev=ViewContent&noscript=1"
+            />
+        </noscript>
+            <!-- End Facebook Pixel Code -->
+    </head>
+    <body>
+    <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8MF527"
+                    height="0"
+                    width="0"
+                    style="display:none;visibility:hidden">
+            </iframe>
+        </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+        <p style="text-align: center">First Web Page!</p>
+        <p style="text-align: center">Create Meta Pixel Events</p>
+        <div>
+            <button id="addToCartButton" onclick="fbq('track', 'AddToCart', {
+                content_ids: ['SKU-123','SKU-124','SKU-125'],
+                content_type: 'product'
+            },
+            {
+                eventID: uuidv4()
+            });">Add to Cart</button>
+        </div>
+        <div>
+            <button id="viewContent" onclick="fbq('track', 'ViewContent', {
+                content_ids: ['SKU-123','SKU-124','SKU-125','SKU-126','SKU-127','SKU-128'],
+                content_type: 'product'
+                },
+                {
+                    eventID: uuidv4()
+                });">View Content</button>
+        </div>
+        <div>
+            <button id="purchase" onclick="fbq('track', 'Purchase', {
+                value: 7.2,
+                currency: 'USD',
+                contents: [
+                    {
+                        id : 'SKU-125',
+                        quantity: 1
+                    },
+                    {
+                        id: 'SKU-126',
+                        quantity: 1
+                    },
+                    {
+                        id: 'SKU-127',
+                        quantity: 1
+                    }
+                ],
+                content_type: 'product'
+                },
+                {
+                    eventID: uuidv4()
+                });">Purchase</button>
+        </div>
+        <div>
+            <p style="text-align: center">Create Google Tag Events</p>
+            <ul>
+                <li><a href="#" onclick=fireEvent('purchase')>Purchase</a></li>
+                <li><a href="#" onclick=fireEvent('add_to_cart')>AddToCart</a></li>
+                <li><a href="#" onclick=fireEvent('generate_lead')>Lead</a></li>
+                <li><a href="#" onclick=fireEvent('search')>Search</a></li>
+                <li><a href="#" onclick=fireEvent('sign_up')>Sign_up</a></li>
+            </ul>
+        </div>
+    </body>
+</html>
