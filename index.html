@@ -12,8 +12,9 @@
                     console.log("Event: " + eventName);
                     eid = uuidv4();
 
-                    fbq('track', eventName, {eventID: eid, currency: "USD",
-                        value: 246.90});
+                    fbq('track', eventName, {eventID: eid, 
+                                             currency: "USD",
+                                             value: 246.90});
                     gtag('event', eventName, {
                         event_id: eid,
                         transaction_id: 't_12345',
