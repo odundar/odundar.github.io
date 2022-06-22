@@ -16,9 +16,9 @@
                         fb_eventName = 'Purchase';
                     }
 
-                    fbq('track', fb_eventName, {eid: eid, 
-                                                currency: "USD",
-                                                value: 246.90});
+                    fbq('track', fb_eventName, { currency: "USD",
+                                                 value: 246.90, 
+                                                 {eventId: eid}, });
                     gtag('event', eventName, {
                         event_id: eid,
                         transaction_id: 't_12345',
