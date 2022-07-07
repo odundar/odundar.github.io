@@ -14,6 +14,10 @@
                     fb_eventName = eventName;
                     if (eventName === 'purchase') {
                         fb_eventName = 'Purchase';
+                    } else if (eventName === 'add_to_cart') {
+                        fb_eventName = 'AddToCart';
+                    } else if (eventName === 'page_view') {
+                        fb_eventName = 'PageView';
                     }
 
                     fbq('track', fb_eventName, { currency: "USD",
