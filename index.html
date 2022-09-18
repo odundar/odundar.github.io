@@ -18,50 +18,93 @@
                         fb_eventName = 'AddToCart';
                     } else if (eventName === 'page_view') {
                         fb_eventName = 'PageView';
+                    } else if (eventName === 'view_item') {
+                        fb_eventName = 'ViewContent';
                     }
 
                     fbq('track', fb_eventName, { currency: "USD",
                                                  value: 246.90 }, 
                                                { eventID: eid } );
-                
-                    gtag('event', eventName, {
-                        event_id: eid,
-                        transaction_id: 't_12345',
-                        currency: "USD",
-                        value: 246.90,
-                        user_data: {
-                            email_address: 'ABC@XYZ.com',
-                            phone_number: '1234567890',
-                            address: {
-                                first_name: 'john',
-                                last_name: 'smith',
-                                city: 'menlopark',
-                                region: 'ca',
-                                postal_code: '94025',
-                                country: 'usa',
+
+                    if (fb_eventName === 'PageView' || fb_eventName === 'ViewContent') {
+                        gtag('event', eventName, {
+                            event_id: eid,
+                            items: [
+                                {
+                                    item_id: 'SKU-124',
+                                    item_name: 'foo',
+                                    quantity: 1,
+                                    price: 123.45,
+                                    currency: 'USD',
+                                    item_category: 'bar',
+                                    item_brand	: 'baz',
+                                }
+                            ],
+                        });
+                    } else if (fb_eventName === 'AddToCart') {
+                        gtag('event', eventName, {
+                            event_id: eid,
+                            items: [
+                                {
+                                    item_id: 'SKU-124',
+                                    item_name: 'foo',
+                                    quantity: 1,
+                                    price: 123.45,
+                                    currency: 'USD',
+                                    item_category: 'bar',
+                                    item_brand	: 'baz',
+                                },
+                                {
+                                    item_id: 'SKU-125',
+                                    item_name: 'foo',
+                                    quantity: 1,
+                                    price: 123.45,
+                                    currency: 'USD',
+                                    item_category: 'bar',
+                                    item_brand	: 'baz',
+                                }
+                            ],
+                        });
+                    } else if (fb_eventName === 'Purchase')  {
+                        gtag('event', eventName, {
+                            event_id: eid,
+                            transaction_id: 't_12345',
+                            currency: "USD",
+                            value: 246.90,
+                            user_data: {
+                                email_address: 'ABC@XYZ.com',
+                                phone_number: '1234567890',
+                                address: {
+                                    first_name: 'john',
+                                    last_name: 'smith',
+                                    city: 'menlopark',
+                                    region: 'ca',
+                                    postal_code: '94025',
+                                    country: 'usa',
+                                },
                             },
-                        },
-                        items: [
-                            {
-                                item_id: 'SKU-123',
-                                item_name: 'foo',
-                                quantity: 2,
-                                price: 123.45,
-                                currency: 'USD',
-                                item_category: 'bar',
-                                item_brand	: 'baz',
-                            },
-                            {
-                                item_id: 'SKU-124',
-                                item_name: 'foo',
-                                quantity: 1,
-                                price: 123.45,
-                                currency: 'USD',
-                                item_category: 'bar',
-                                item_brand	: 'baz',
-                            }
-                        ],
-                    });
+                            items: [
+                                {
+                                    item_id: 'SKU-123',
+                                    item_name: 'foo',
+                                    quantity: 2,
+                                    price: 123.45,
+                                    currency: 'USD',
+                                    item_category: 'bar',
+                                    item_brand	: 'baz',
+                                },
+                                {
+                                    item_id: 'SKU-126',
+                                    item_name: 'foo',
+                                    quantity: 1,
+                                    price: 123.45,
+                                    currency: 'USD',
+                                    item_category: 'bar',
+                                    item_brand	: 'baz',
+                                }
+                            ],
+                        });
+                    }
                 }
         </script>
         <!-- End Google Tag Manager -->
