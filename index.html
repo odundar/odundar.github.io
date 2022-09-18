@@ -20,6 +20,8 @@
                         fb_eventName = 'PageView';
                     } else if (eventName === 'view_item') {
                         fb_eventName = 'ViewContent';
+                    } else if (eventName === 'search') {
+                        fb_eventName = 'Search';
                     }
 
                     fbq('track', fb_eventName, { currency: "USD",
@@ -41,9 +43,55 @@
                                 }
                             ],
                         });
-                    } else if (fb_eventName === 'AddToCart') {
+                    } else if (fb_eventName === 'search' ) {
                         gtag('event', eventName, {
                             event_id: eid,
+                            search_term: 'general search items',
+                            items: [
+                                {
+                                    item_id: 'SKU-124',
+                                    item_name: 'foo',
+                                    quantity: 1,
+                                    price: 123.45,
+                                    currency: 'USD',
+                                    item_category: 'bar',
+                                    item_brand	: 'baz',
+                                },
+                                {
+                                    item_id: 'SKU-130',
+                                    item_name: 'foo',
+                                    quantity: 1,
+                                    price: 123.45,
+                                    currency: 'USD',
+                                    item_category: 'bar',
+                                    item_brand	: 'baz',
+                                },
+                                {
+                                    item_id: 'SKU-127',
+                                    item_name: 'foo',
+                                    quantity: 1,
+                                    price: 123.45,
+                                    currency: 'USD',
+                                    item_category: 'bar',
+                                    item_brand	: 'baz',
+                                },
+                                {
+                                    item_id: 'SKU-128',
+                                    item_name: 'foo',
+                                    quantity: 1,
+                                    price: 123.45,
+                                    currency: 'USD',
+                                    item_category: 'bar',
+                                    item_brand	: 'baz',
+                                },
+                            ],
+                        });
+                    }
+                    else if (fb_eventName === 'AddToCart') {
+                        gtag('event', eventName, {
+                            event_id: eid,
+                            currency: 'USD',
+                            price: 123.45,
                             items: [
                                 {
                                     item_id: 'SKU-124',
@@ -193,11 +241,14 @@
         <div>
             <p style="text-align: center">Create Google Tag Events</p>
             <ul>
-                <li><a href="#" onclick=fireEvent('purchase')>Purchase</a></li>
-                <li><a href="#" onclick=fireEvent('add_to_cart')>AddToCart</a></li>
-                <li><a href="#" onclick=fireEvent('generate_lead')>Lead</a></li>
-                <li><a href="#" onclick=fireEvent('search')>Search</a></li>
-                <li><a href="#" onclick=fireEvent('sign_up')>Sign_up</a></li>
+                <li><a href="#" onclick=fireEvent('page_view')>PageView Event Trigger</a></li>
+                <li><a href="#" onclick=fireEvent('search')>Search Event Trigger</a></li>
+                <li><a href="#" onclick=fireEvent('view_item')>AddToCart Event Trigger</a></li>
+                <li><a href="#" onclick=fireEvent('purchase')>Purchase Event Trigger</a></li>
+                <li><a href="#" onclick=fireEvent('add_to_cart')>AddToCart Event Trigger</a></li>
+                <li><a href="#" onclick=fireEvent('generate_lead')>Lead Event Trigger</a></li>
+                
+                <li><a href="#" onclick=fireEvent('sign_up')>Sign_up Event Trigger</a></li>
             </ul>
         </div>
     </body>
