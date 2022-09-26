@@ -27,8 +27,9 @@
                     fbq('track', fb_eventName, { currency: "USD",
                                                  value: 246.90 }, 
                                                { eventID: eid } );
-
-                    if (fb_eventName === 'PageView' || fb_eventName === 'ViewContent') {
+                    if (eventName == 'flush_events'){ 
+                        gtag('event', eventName);
+                    } else if (fb_eventName === 'PageView' || fb_eventName === 'ViewContent') {
                         gtag('event', eventName, {
                             event_id: eid,
                             items: [
@@ -234,6 +235,7 @@
                 <li><a href="#" onclick=fireEvent('add_to_cart')>AddToCart Event Trigger</a></li>
                 <li><a href="#" onclick=fireEvent('generate_lead')>Lead Event Trigger</a></li>
                 <li><a href="#" onclick=fireEvent('sign_up')>Sign_up Event Trigger</a></li>
+                <li><a href="#" onclick=fireEvent('flush_events')>Flush Events</a></li>
             </ul>
         </div>
     </body>
