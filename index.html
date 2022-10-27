@@ -199,18 +199,18 @@
                 content_type: 'product'
             },
             {
-                eventID: uuidv4()
-            },
-            'advanced_matching' : { extern_id = '1231231', }, );">Add to Cart</button>
+                eventID: uuidv4(),
+                external_id: '12312322222'
+            }, );">Add to Cart</button>
         </div>
         <div>
             <button id="viewContent" onclick="fbq('track', 'ViewContent', {
                 content_ids: ['SKU-123','SKU-124','SKU-125','SKU-126','SKU-127','SKU-128'],
                 content_type: 'product'
                 },
-                advanced_matching : { extern_id = '1231231', },
                 {
-                    eventID: uuidv4()
+                    eventID: uuidv4(),
+                    ud : { em : 'test@test1.com', external_id: '12223344', } ,
                 });">View Content</button>
         </div>
         <div>
@@ -234,7 +234,9 @@
                 content_type: 'product'
                 },
                 {
-                    eventID: uuidv4()
+                    eventID: uuidv4(),
+                    em: 'test@test.com',
+                    external_id: '12312312312312',
                 });">Purchase</button>
         </div>
         <div>
