@@ -200,13 +200,15 @@
             },
             {
                 eventID: uuidv4()
-            });">Add to Cart</button>
+            },
+            'advanced_matching' : { extern_id = '1231231', }, );">Add to Cart</button>
         </div>
         <div>
             <button id="viewContent" onclick="fbq('track', 'ViewContent', {
                 content_ids: ['SKU-123','SKU-124','SKU-125','SKU-126','SKU-127','SKU-128'],
                 content_type: 'product'
                 },
+                advanced_matching : { extern_id = '1231231', },
                 {
                     eventID: uuidv4()
                 });">View Content</button>
