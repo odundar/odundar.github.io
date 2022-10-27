@@ -165,7 +165,7 @@
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '1292647064571917');
-            fbq('track', 'PageView', {eventID: uuidv4()});
+            fbq('track', 'PageView', {}, {eventID: uuidv4()});
             function uuidv4() {
                 return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
                     var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
@@ -238,6 +238,9 @@
                     em: 'test@test.com',
                     external_id: '12312312312312',
                 });">Purchase</button>
+        </div>
+        <div>
+            <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1292647064571917&ev=ViewContent&noscript=1&ud[external_id]=testing_id"/>
         </div>
         <div>
             <p style="text-align: center">Create Google Tag Events</p>
