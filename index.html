@@ -18,6 +18,23 @@
                             event_id: eid,
                         });
                         return;
+                    } else if (eventName === 'offline_purchase') {
+                        gtag('event', eventName, {
+                            event_id: eid,
+                            user_data: {
+                                email_address: 'ooo@test.com',
+                                phone_number: '1234567890',
+                                address: {
+                                    first_name: 'john',
+                                    last_name: 'smith',
+                                    city: 'menlopark',
+                                    region: 'ca',
+                                    postal_code: '94025',
+                                    country: 'usa',
+                                },
+                            }
+                        });
+                        return;
                     }
                 
                     if (eventName === 'purchase') {
@@ -251,6 +268,7 @@
                 <li><a href="#" onclick=fireEvent('generate_lead')>Lead Event Trigger</a></li>
                 <li><a href="#" onclick=fireEvent('sign_up')>Sign_up Event Trigger</a></li>
                 <li><a href="#" onclick=fireEvent('flush_events')>Flush Events</a></li>
+                <li><a href="#" onclick=fireEvent('offline_purchase')>Flush Events</a></li>
             </ul>
         </div>
     </body>
