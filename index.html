@@ -104,24 +104,25 @@
                     else if (fb_eventName === 'AddToCart') {
                         gtag('event', eventName, {
                             event_id: eid,
+                            currency: 'USD',
                             items: [
                                 {
                                     item_id: 'SKU-124',
                                     item_name: 'foo',
                                     quantity: 1,
                                     price: 123.45,
+                                    currency: 'USD',
                                     item_category: 'bar',
                                     item_brand	: 'baz',
-                                    currency: 'USD'
                                 },
                                 {
                                     item_id: 'SKU-125',
                                     item_name: 'foo',
                                     quantity: 1,
                                     price: 123.45,
+                                    currency: 'USD',
                                     item_category: 'bar',
                                     item_brand	: 'baz',
-                                    currency: 'USD',
                                 }
                             ],
                         });
