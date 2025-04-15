@@ -189,6 +189,11 @@
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '1292647064571917', {external_id : '12345671289', });
+            fbq('init', '676088554122300', {external_id : '12345671289', });
+            fbq('init', '1310008403616053', {external_id : '12345671281', });
+            fbq('init', '3542960535848715', {external_id : '12345671282', });
+            fbq('init', '1134663931793218', {external_id : '12345671284', });
+            fbq('init', '1292647064571917', {external_id : '12345671285', });
             fbq('track', 'PageView', {}, {eventID: uuidv4()});
             function uuidv4() {
                 return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -213,7 +218,7 @@
         <p style="text-align: center">Create Meta Pixel Events</p>
         <div>
             <button id="addToCartButton" onclick="fbq('track', 'AddToCart', {
-                content_ids: ['SKU-123','SKU-124','SKU-125'],
+                content_ids: ['jficp9dv2c','uvcmyyx3nz','8pzmjrsobd','0yxqxob22n','0yxqxob22n','SKU-123','SKU-124','SKU-125'],
                 content_type: 'product'
             },
             {
@@ -223,7 +228,7 @@
         </div>
         <div>
             <button id="viewContent" onclick="fbq('track', 'ViewContent', {
-                content_ids: ['SKU-123','SKU-124','SKU-125','SKU-126','SKU-127','SKU-128'],
+                content_ids: ['jficp9dv2c','uvcmyyx3nz','8pzmjrsobd','0yxqxob22n','0yxqxob22n','SKU-123','SKU-124','SKU-125','SKU-126','SKU-127','SKU-128'],
                 content_type: 'product'
                 },
                 {
@@ -236,6 +241,26 @@
                 value: 7.2,
                 currency: 'USD',
                 contents: [
+                    {
+                        id : 'jficp9dv2c'
+                        quantity : 2,
+                    },
+                    {
+                        id : 'uvcmyyx3nz'
+                        quantity : 2,
+                    },
+                    {
+                        id : '8pzmjrsobd'
+                        quantity : 3,
+                    },
+                    {
+                        id : '0yxqxob22n'
+                        quantity : 2,
+                    },
+                    {
+                        id : '0yxqxob22n'
+                        quantity : 2,
+                    },
                     {
                         id : 'SKU-125',
                         quantity: 1
@@ -253,7 +278,7 @@
                 },
                 {
                     eventID: uuidv4(),
-                    em: 'test@test.com',
+                    em: 'onur@test.com',
                     external_id: '12312312312312',
                 });">Purchase</button>
         </div>
