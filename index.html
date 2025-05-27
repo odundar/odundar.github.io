@@ -222,9 +222,13 @@
                 content_ids: ['jficp9dv2c','uvcmyyx3nz','8pzmjrsobd','0yxqxob22n','0yxqxob22n','SKU-123','SKU-124','SKU-125'],
                 content_type: 'product'
             },
+            value: 22.0,
+            currency: 'USD',
+            net_revenue: 4.5,                                          
             {
                 eventID: uuidv4(),
-                external_id: '12312322222'
+                external_id: '12312322222',
+                predicted_ltv: 11.2,
             }, );">Add to Cart</button>
         </div>
         <div>
@@ -241,6 +245,8 @@
             <button id="purchase" onclick="fbq('track', 'Purchase', {
                 value: 7.2,
                 currency: 'USD',
+                net_revenue: 4.5,
+                predicted_ltv: 11.2,
                 contents: [
                     {
                         id : 'jficp9dv2c',
